@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Opener — одежда</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎁 Dodepovo 🎁</h1>
+            <div class="balance">
+                💰 Баланс: <span id="balance">1000</span> ₽
+            </div>
+        </header>
+
+        <div class="cases-showcase" id="casesShowcase"></div>
+
+        <div class="opening-area" id="openingArea" style="display: none;">
+            <h2 id="selectedCaseTitle">Открытие кейса</h2>
+            <div class="slot-machine" id="slotMachine">
+                <div class="rarity-legend">⚡ Нажми "Открыть кейс" чтобы начать ⚡</div>
+            </div>
+            <button class="open-btn" id="openBtn">🔓 Открыть кейс (100 ₽)</button>
+            <button class="open-btn" id="backBtn" style="background: #666;">◀ Назад</button>
+        </div>
+
+        <div class="inventory" id="inventory">
+            <h2>🎒 Мой инвентарь</h2>
+            <div class="inventory-items" id="inventoryItems"></div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,262 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1e1e2f, #2a2a40);
+    min-height: 100vh;
+    color: white;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    padding: 40px 0;
+}
+
+h1 {
+    font-size: 3rem;
+    background: linear-gradient(45deg, #ffd700, #ff8c00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+}
+
+.balance {
+    background: rgba(0,0,0,0.3);
+    padding: 15px 30px;
+    border-radius: 50px;
+    display: inline-block;
+    font-size: 1.2rem;
+    border: 1px solid rgba(255,215,0,0.3);
+}
+
+.balance span {
+    color: #ffd700;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.cases-showcase {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin: 50px 0;
+}
+
+.case-item {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+    width: 250px;
+}
+
+.case-item:hover {
+    transform: translateY(-10px);
+    border-color: #ffd700;
+    box-shadow: 0 10px 30px rgba(255,215,0,0.2);
+}
+
+.case-item img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.case-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.price {
+    color: #ffd700;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.opening-area {
+    background: rgba(0,0,0,0.5);
+    border-radius: 30px;
+    padding: 40px;
+    margin: 40px 0;
+    text-align: center;
+    border: 1px solid rgba(255,215,0,0.3);
+}
+
+.slot-machine {
+    background: #1a1a2e;
+    border-radius: 20px;
+    padding: 30px;
+    margin: 30px 0;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ffd700;
+}
+
+.drop-item {
+    text-align: center;
+    animation: dropAnimation 0.5s ease;
+}
+
+.drop-item img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 3px solid #ffd700;
+}
+
+.drop-item h3 {
+    font-size: 2rem;
+    margin: 20px 0;
+    color: #ffd700;
+}
+
+.rarity-legend {
+    font-size: 0.9rem;
+    color: #888;
+    margin: 10px 0;
+}
+
+@keyframes dropAnimation {
+    0% {
+        transform: scale(0) rotate(-180deg);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1) rotate(0);
+        opacity: 1;
+    }
+}
+
+.spinning {
+    animation: spin 0.2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.open-btn {
+    background: linear-gradient(45deg, #ffd700, #ff8c00);
+    border: none;
+    color: #1a1a2e;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 15px 50px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin: 20px 0;
+}
+
+.open-btn:hover:not(:disabled) {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(255,215,0,0.5);
+}
+
+.open-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.inventory {
+    background: rgba(255,255,255,0.05);
+    border-radius: 20px;
+    padding: 30px;
+    margin-top: 40px;
+}
+
+.inventory h2 {
+    color: #ffd700;
+    margin-bottom: 20px;
+}
+
+.inventory-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.inventory-item {
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid rgba(255,215,0,0.3);
+}
+
+.inventory-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.inventory-item p {
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+.error-message {
+    color: #ff4444;
+    margin: 10px 0;
+}
+.flying {
+    animation: flyIn 0.3s ease-in-out;
+}
+
+.final {
+    animation: popIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes flyIn {
+    0% {
+        transform: translateX(-200px) rotate(-20deg);
+        opacity: 0;
+    }
+    50% {
+        transform: translateX(50px) rotate(10deg);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateX(0) rotate(0);
+        opacity: 1;
+    }
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0);
+    }
+    80% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.case-description {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-top: 10px;
+}
